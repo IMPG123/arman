@@ -1,227 +1,320 @@
-#include<iostream>
-#include<string>
-using namespace std;
-#define NUM 1000
-void read();
-void menu();
-void find_num();
-void write()
-void add();
-void modify_num();
-void del_num();
-void grsds();
-void load(); 
-void list()
-struct emploee  //Ö°¹¤Êı¾İ½á¹¹
-int n;      //Ô±¹¤×ÜÈËÊı
+// main2.cpp : å®šä¹‰æ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
+//
+
+#include "stdafx.h"
+
+
+int _tmain(int argc, _TCHAR* argv[])
 {
- char no[10];
- char name[30];
- float wage1;      //Ô±¹¤µÄ»ù±¾¹¤×Ê
- float wage2;      //Ô±¹¤µÄÖ°Îñ¹¤×Ê
- float wage3;      //Ô±¹¤µÄÖ°Îñ½òÌù
- float wage4;   //Ô±¹¤µÄ¼¨Ğ§¹¤×Ê
- float wage5;    //Ô±¹¤µÄÓ¦·¢¹¤×Ê
- float TAXfee;     //Ô±¹¤µÄ¸öÈËËùµÃË°
- float wage6;      //Ô±¹¤µÄÊµ·¢¹¤×Ê
-}emp[NUM],newemp;
+	return 0;
+}
+
+#include<iostream>
+#include<stdio>
+using namespace std;
+one;
+FILE*fp;
+void read();
+void find();
+void write();
+void add();
+void modify();
+void Delete();
+void grsds();
+void load() ;
+void list();
+void exit();
+struct emploee  //èŒå·¥æ•°æ®ç»“æ„
+int n;      //å‘˜å·¥æ€»äººæ•°
+{
+char no[10];
+char name[30];
+float wage1;      //å‘˜å·¥çš„åŸºæœ¬å·¥èµ„
+float wage2;      //å‘˜å·¥çš„èŒåŠ¡å·¥èµ„
+float wage3;      //å‘˜å·¥çš„èŒåŠ¡æ´¥è´´
+float wage4;   //å‘˜å·¥çš„ç»©æ•ˆå·¥èµ„
+float wage5;    //å‘˜å·¥çš„åº”å‘å·¥èµ„
+float TAXfee;     //å‘˜å·¥çš„ä¸ªäººæ‰€å¾—ç¨
+float wage6;      //å‘˜å·¥çš„å®å‘å·¥èµ„
+}
 void main()
 {
- menu();
+ menu()
 }
-void menu()//Ö÷½çÃæ
-{  int n,w1;
+void main()
+{ int n,w1;
    
-   do
-   { system("cls");  
-      printf("************* Ö°¹¤¹¤×Ê¹ÜÀíÏµÍ³ **************\n");
-      printf("*            1-----²éÕÒÖ°¹¤ĞÅÏ¢                     *\n");
-      printf("*            2-----Ìí¼ÓÖ°¹¤ĞÅÏ¢                     *\n");
-      printf("*            3-----ĞŞ¸ÄÖ°¹¤ĞÅÏ¢	                             *\n");
-      printf("*            4-----É¾³ıÖ°¹¤ĞÅÏ¢             *\n");
-      printf("*            5-----ÍË³ö³ÌĞò                           *\n");
+  do
+	  system("color 0b");  
+      printf("************* èŒå·¥å·¥èµ„ç®¡ç†ç³»ç»Ÿ **************\n");
+      printf("*            1-----æ·»åŠ èŒå·¥ä¿¡æ¯                     *\n");
+      printf("*            2-----æŸ¥æ‰¾èŒå·¥ä¿¡æ¯                     *\n");
+      printf("*            3-----ä¿®æ”¹èŒå·¥ä¿¡æ¯	                             *\n");
+      printf("*            4-----åˆ é™¤èŒå·¥ä¿¡æ¯ *\n");
+	  printf("*            6-----è¾“å‡ºèŒå·¥ä¿¡æ¯                           *\n")
+      printf("*            6-----é€€å‡ºç¨‹åº                           *\n");
       printf("***************************************************\n");
-  printf("       ÊäÈëÄúµÄÑ¡Ôñ(1-9):[ ]\b\b");
-  scanf("%d",&n);
-  if(n<1||n>9)                                    //¶ÔÑ¡ÔñµÄÊı×Ö×÷ÅĞ¶Ï
-         {
-            w1=1;
-            printf("your choice is not between 1 and 9,Please input again:");
-            getchar();
-          }
-         else    w1=0;
-      } 
-    while(w1==1);
-  switch(n)
-  { case 1:search_num();    break;   
-    case 2:add();   break;  
-    case 3:modi_num();   break;    
-    case 4:dele_num();   break;    
-    case 5:count ();    break;    
-    case 9:printf("\n¡Á¡Á¡Á¡Á¡Á¡Á¡ÁĞ»Ğ»£¬»¶Ó­ÏÂ´Î¹âÁÙ£¡¡Á¡Á¡Á¡Á¡Á¡Á¡Á\n\n");
-    default:exit(0);  //ÍË³öÏµÍ³,exit(0)º¯Êı¹¦ÄÜÊÇÍË³ö³ÌĞò¡£
-  }
+	  scanf("%d",&m);
+		if(m>=1&&m<=6)
+		{
+			switch(m)
+			{
+				case 1: add();
+				break;
+				case 2: search();
+				break;
+				case 3: modify();
+				break;
+				case 4: Delete();
+				break;
+				case 5: read();
+				break;
+				case 6: exit(0);
+			}
+		}
+		else
+		{
+			printf("\n\næ— æ•ˆæ‰“å¼€æ–‡ä»¶ï¼Œè¯·é‡è¯•");
+		}
+	}
 }
-/*************************¶ÁÈ¡Ä£¿é**********************/
-void read()
-{
-     FILE *fp;
-     int n,i;
-     if ((fp=fopen("emp.txt","wb"))==NULL)
-     {
+
  
-     printf("²»ÄÜ½¨Á¢empÎÄ¼ş\n");
-     exit(1);
-     }
-     printf("ÊäÈëÖ°¹¤ÈËÊı:");
-    scanf("%d",&n);
-     printf("ÊäÈë¸ñÊ½:Ö°¹¤ºÅ ĞÕÃû  »ù±¾¹¤×Ê Ö°Îñ¹¤×Ê Ö°Îñ½òÌù  ¼¨Ğ§¹¤×Ê   Ó¦·¢¹¤×Ê  Ë° Êµ·¢¹¤×Ê<Enter>\n");
-     for(i=0;i<n;i++)   /*  Ñ­»·»ñÈ¡n¸öÖ°¹¤¼ÇÂ¼ */
-     {
-         printf("µÚ%d¸öÖ°¹¤:",i+1);
-         scanf("%s%s%s%d%f%f%f%f%f",emp[i].no,emp[i].name,
-           &emp[i].wage1,&emp[i].wage2,&emp[i].wage3,&emp[i].wage4,&emp[i].wage5,&emp[i].&emp[i].TAXfee); emp[i].wage6=emp[i].wage1+emp[i].wage2+emp[i].wage3+emp[i].wage4+emp[i].wage5.TAXfee;
-     }
-     for(i=0;i<n;i++)      /*½«n¸öÖ°¹¤¼ÇÂ¼Ğ´ÈëÎÄ¼ş*/
-          fwrite(&emp[i],sizeof(struct emploee),1,fp);
-     fclose(fp);
+/*************************è¯»å–æ¨¡å—**********************/
+void read()
+	{	
+	int choice;
+	system("cls");
+	if((fp=fopen("worker.xls","r"))==NULL)
+	{
+		system("cls");
+		printf("\nå¯¹ä¸èµ·ï¼Œæ— æ³•æŸ¥è¯¢ä¿¡æ¯æ–‡ä»¶ã€‚\n\n");
+		exit(0);
+	}
+	printf("                          =========================\n");
+	printf("                                  èŒå·¥ä¿¡æ¯\n");
+	printf("                          =========================\n");
+     printf("è®°å½•å· èŒå·¥å· å§“å å§“å  åŸºæœ¬å·¥èµ„ èŒåŠ¡å·¥èµ„ èŒåŠ¡æ´¥è´´  ç»©æ•ˆå·¥èµ„   åº”å‘å·¥èµ„  ç¨ å®å‘å·¥èµ„\n");
+	printf("          \n\n");
+	while(!feof(fp))
+	{
+		fscanf(fp,"%s%s%s%s%s%s%s%s%s\n",one.name,one.num,one.sex,one.position,one.wanges,one.birth,one.gread,one.add,one.pnum);
+		printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n",one.name,one.num,one.sex,one.position,one.wanges,one.birth,one.gread,one.add,one.pnum);
+	}
+	fclose(fp);
+	printf("\n\næ˜¾ç¤ºå®Œæ¯•ï¼Œè¯·æŒ‰ä¸‹å›è½¦ç»§ç»­");
+	choice=getch();
+	system("cls");
 }
-/*************************Í³¼ÆÄ£¿é**********************/
+
+/*************************ç»Ÿè®¡æ¨¡å—**********************/
 void grsds()
 {
      FILE *fp;
      int n,num;
      if((fp=fopen("emp.txt","rb"))==NULL)
      {
-         printf("²»ÄÜ´ò¿ªempÎÄ¼ş\n");
+         printf("ä¸èƒ½æ‰“å¼€empæ–‡ä»¶\n");
          exit(1);
      }
-     printf("ÇëÊäÈë¹¤×ÊÊı:");
+     printf("è¯·è¾“å…¥å·¥èµ„æ•°:");
      scanf("%d",&num);
-     printf("¼ÇÂ¼ºÅ Ö°¹¤ºÅ ĞÕÃû ĞÕÃû  »ù±¾¹¤×Ê Ö°Îñ¹¤×Ê Ö°Îñ½òÌù  ¼¨Ğ§¹¤×Ê   Ó¦·¢¹¤×Ê  Ë° Êµ·¢¹¤×Ê\n");
+     printf(" èŒå·¥å· å§“å å§“å  åŸºæœ¬å·¥èµ„ èŒåŠ¡å·¥èµ„ èŒåŠ¡æ´¥è´´  ç»©æ•ˆå·¥èµ„   åº”å‘å·¥èµ„  ç¨ å®å‘å·¥èµ„\n");
      for(n=0;fread(&emp[n],sizeof(struct emploee),1,fp)!=0;n++)
      if(emp[n].wage3>=num)
      printf("%6d%6s%9s%4s%5d   %.1f   %.1f  %.1f   %.1f   %.1f   %.1f\n",n+1,emp[n].no,emp[n].name,emp[n].wage1,
              emp[n].wage2,emp[n].wage3,emp[n].wage4,emp[n].wage5,emp[n].TAXfee,emp[n].wage6);
      fclose(fp);
 }
-/********************É¾³ıÄ£¿é*******************/
+/********************åˆ é™¤æ¨¡å—*******************/
 
-void del_num()
-{
-     FILE *fp;
-     int i,j,n;
-     char num[5];
-     if((fp=fopen("emp.txt","rb"))==NULL)
-     {
-         printf("²»ÄÜ´ò¿ªempÎÄ¼ş\n");
-         exit(1);
-      }
-     printf("É¾³ıÇ°:\n");
-     printf("¼ÇÂ¼ºÅ Ö°¹¤ºÅ ĞÕÃû  »ù±¾¹¤×Ê Ö°Îñ¹¤×Ê Ö°Îñ½òÌù  ¼¨Ğ§¹¤×Ê   Ó¦·¢¹¤×Ê  Ë° Êµ·¢¹¤×Ê\n");
-    for(n=0;fread(&emp[n],sizeof(struct emploee),1,fp);n++)
-     printf("%6d%6s%9s%4s%5d   %.1f   %.1f   %.1f   %.1f   %.1f   %.1f\n",n+1,emp[n].no,emp[n].name,emp[n].wage1,emp[n].wage2,emp[n].wage3,emp[n].wage4,emp[n].wage5,
-	 emp[n].TAXfee,emp[n].wage6);/*nÎªempÎÄ¼şÖĞ¼ÇÂ¼Êı*/
-     printf("ÒªÉ¾³ıµÄÖ°¹¤ºÅ:");
-     scanf("%s",num);
-     for(i=0;(strcmp(emp[i].no,num)!=0&&i<n);i++)
-     if(i>=n)
-     {
-          printf("\tÃ»ÓĞ%sÖ°¹¤ºÅµÄÖ°¹¤\n",num);
-          exit(2);
-     }
-     fclose(fp);
-     fp=fopen("emp.dat","w+");
-     if(n==1)  /*Ò»¸ö¼ÇÂ¼ÒÑ¾­É¾³ıÁË*/
-     {
-           fclose(fp);
-           exit(3);
-     }
-     for(j=0;j<i;j++)
-        fwrite(&emp[j],sizeof(struct emploee),1,fp);
-     for(j=i+1;j<n;j++)
-         fwrite(&emp[j],sizeof(struct emploee),1,fp);
-     printf("É¾³ıºó:\n");
-     fseek(fp,0,SEEK_SET);
-     printf("¼ÇÂ¼ºÅ Ö°¹¤ºÅ ĞÕÃû  »ù±¾¹¤×Ê Ö°Îñ¹¤×Ê Ö°Îñ½òÌù  ¼¨Ğ§¹¤×Ê   Ó¦·¢¹¤×Ê  Ë° Êµ·¢¹¤×Ê\n");
-     for(i=0;fread(&emp[i],sizeof(struct emploee),1,fp);i++)
-         printf("%6d%6s%9s%4s%5d%   %.1f    %.1f   %.1f   %.1f   %.1f   %.1f\n",i+1,emp[i].no,emp[i].name,emp[i].wage1,
-                 emp[i].wage2,emp[i].wage3,emp[i].wage4,emp[i].wage5,emp[i].TAXfee,emp[i].wage6);
-       fclose(fp);
+void Delete()
+	{
+	int m;
+	int choice;
+	int k=0;	
+	long a;
+	char namekey[50];
+	char valid[50];
+	system("cls");
+	printf("\nè¯·è¾“å…¥æ‚¨è¦ä¿®æ”¹çš„èŒå·¥å§“å:");
+	scanf("%s",namekey);
+	if((fp=fopen("worker.xls","r+"))==NULL)
+	{
+		printf("\nå¯¹ä¸èµ·ï¼Œæ— æ³•æŸ¥è¯¢ä¿¡æ¯æ–‡ä»¶ã€‚");
+		exit(0);
+	}
+	while(!feof(fp))
+	{
+		a=ftell(fp);
+		fscanf(fp,"%s%s%s%s%s\n",one.name,one.num,one.sex,one.position,one.wanges,one.birth,one.gread,one.add,one.pnum);
+		if(strcmp(namekey,one.name)==0)
+		{
+			k=1;
+			break;
+		}
+	}
+	if(k==1)
+	{
+		printf("\nå·²æŸ¥åˆ°ï¼Œè®°å½•ä¸º:");
+		printf("\n%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n",one.name,one.num,one.sex,one.position,one.wanges,one.birth,one.gread,one.add,one.pnum);
+		printf("\nç¡®å®šåˆ é™¤æŒ‰1ï¼Œä¸åˆ é™¤æŒ‰0ï¼š");
+		scanf("%d",&m);
+		if(m==1)
+		{
+			fseek(fp,a,0);
+			fprintf(fp,"%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n","","","","","");
+		}
+	}
+	else
+	{
+		printf("\nå¯¹ä¸èµ·ï¼ŒæŸ¥æ— æ­¤äººã€‚");
+	}
+	fclose(fp);
+	printf("\n\næ“ä½œå®Œæˆï¼Œè¯·æŒ‰ä¸‹å›è½¦ç»§ç»­");
+	choice=getch();
+	system("cls");
 }
-/********************ĞŞ¸ÄÄ£¿é*******************/
-void modify _num()
+/********************ä¿®æ”¹æ¨¡å—*******************/
+void modify()
 {
-     FILE *fp;
-     int i,j;
-     char num[5];
-     if((fp=fopen("emp.txt","rb+"))==NULL)
-     {
-         printf("²»ÄÜ ´ò¿ªempÎÄ¼ş\n");
-         exit(1);
-     }
-     printf("ÒªĞŞ¸ÄµÄÖ°¹¤ºÅ:");
-     scanf("%s",num);
-     for(i=0;fread(&emp[i],sizeof(struct emploee),1,fp);i++)
-    if(!strcmp(emp[i].no,num))break;
-     if(feof(fp))
-     {
-          printf("\tÃ»ÓĞ%sÖ°¹¤ºÅµÄÖ°¹¤\n",num);
-          exit(2);
-     }
-     printf("¼ÇÂ¼ºÅ Ö°¹¤ºÅ   ĞÕÃû  »ù±¾¹¤×Ê Ö°Îñ¹¤×Ê Ö°Îñ½òÌù  ¼¨Ğ§¹¤×Ê   Ó¦·¢¹¤×Ê  Ë°  Êµ·¢¹¤×Ê\n");
-     printf("%6d%6s%9s%4s%5d%   %.1f   %.1f   %.1f   %.1f   %.1f   %.1f\n",i+1,emp[i].no,emp[i].name,emp[i].wage1,
-              emp[i].wage2,emp[i].wage3,emp[i].wage4,emp[i].wage5,emp[i].TAXfee,emp[i].wage6);
-    printf("ÊäÈë¸ñÊ½:Ö°¹¤ºÅ   ĞÕÃû  »ù±¾¹¤×Ê Ö°Îñ¹¤×Ê Ö°Îñ½òÌù  ¼¨Ğ§¹¤×Ê   Ó¦·¢¹¤×Ê  Ë° <Enter>\n");
-    printf("µÚ%d¸ö¼ÇÂ¼:",i+1);
-    scanf("%s%s%s%d%f%f%f%f%f",newemp.no,newemp.name,
-               &newemp.wage1,&newemp.wage2,&newemp.wage3,&newemp.wage4,&newemp.wage5,&newemp.TAXfee);//»ñÈ¡ĞÂµÄÖ°¹¤¼ÇÂ¼
-             newemp.wage6=newemp.wage1+newemp.wage2+&newemp.wage3+&newemp.wage4+&newemp.wage5-newemp.TAXfee;
-    fseek(fp,-(long)sizeof(struct emploee),SEEK_CUR);  //ÎÄ¼şÖ¸ÕëÖ¸Ïò¸ÃĞŞ¸ÄµÄ¼ÇÂ¼¿ªÍ·
-     fwrite(&newemp,sizeof(struct emploee),1,fp);  //ÓÃnewemp¸²¸Çµ±Ç°¼ÇÂ¼
-     printf(" ĞŞ¸Äºó:\n");
-    fseek(fp,0,SEEK_SET);        //ÏÔÊ¾ĞŞ¸ÄºóµÄÎÄ¼şÊı¾İ
-     printf("¼ÇÂ¼ºÅ Ö°¹¤ºÅ    ĞÕÃû  »ù±¾¹¤×Ê Ö°Îñ¹¤×Ê Ö°Îñ½òÌù  ¼¨Ğ§¹¤×Ê   Ó¦·¢¹¤×Ê  Ë°  Êµ·¢¹¤×Ê\n");
-     for(i=0;fread(&emp[i],sizeof(struct emploee),1,fp)!=0;i++)
-         printf("%6d%6s%9s%4s%5d   %.1f   %.1f  %.1f   %.1f  %.1f   %.1f\n",i+1,emp[i].no,emp[i].name,emp[i].wage1,
-                   emp[i].wage2,emp[i].wage3,emp[i].wage4,emp[i].wage5,emp[i].TAXfee,emp[i].wage6);
-    fclose(fp);
+	int choice;
+	int k=0;	
+	long a;
+	char namekey[50];
+	system("cls");
+	printf("\nè¯·è¾“å…¥æ‚¨è¦ä¿®æ”¹çš„èŒå·¥å§“å:");
+	scanf("%s",namekey);
+	if((fp=fopen("worker.xls","r+"))==NULL)
+	{
+		printf("\nå¯¹ä¸èµ·ï¼Œæ— æ³•æŸ¥è¯¢ä¿¡æ¯æ–‡ä»¶ã€‚");
+		exit(0);
+	}
+	while(!feof(fp))
+	{
+		a=ftell(fp);
+		fscanf(fp,"%s%s%s%s%s%s%s%s%s\n",one.name,one.num,one.sex,one.position,one.wanges,one.birth,one.gread,one.add,one.pnum);
+		if(!strcmp(namekey,one.name))
+		{
+			k=1;
+			break;
+		}
+	}
+	if(k)
+	{
+		printf("\nå·²æŸ¥åˆ°ï¼Œè®°å½•ä¸º:");
+		printf("\n%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n",one.name,one.num,one.sex,one.position,one.wanges,one.birth,one.gread,one.add,one.pnum);
+		printf("\nè¯·è¾“å…¥éœ€è¦ä¿®æ”¹çš„ä¿¡æ¯ã€‚\n");
+		printf("ï¼ˆè¯·æŒ‰ç…§ï¼šå§“å  åŸºæœ¬å·¥èµ„ èŒåŠ¡å·¥èµ„ èŒåŠ¡æ´¥è´´  ç»©æ•ˆå·¥èµ„   åº”å‘å·¥èµ„  ç¨ å®å‘å·¥èµ„ï¼‰\n");
+		scanf("%s%s%s%s%s%s%s%s%s",one.name,one.num,one.sex,one.position,one.wanges,one.birth,one.gread,one.add,one.pnum);
+		fseek(fp,a,0);
+		fprintf(fp,"%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n",one.name,one.num,one.sex,one.position,one.wanges,one.birth,one.gread,one.add,one.pnum);
+	}
+	else
+	{
+		printf("\nå¯¹ä¸èµ·ï¼ŒæŸ¥æ— æ­¤äººï¼Œæ— æ³•ä¿®æ”¹ã€‚");
+		fclose(fp);
+	}
+	printf("\n\næ“ä½œå®Œæˆï¼Œè¯·æŒ‰ä¸‹å›è½¦ç»§ç»­");
+	choice=getch();
+	system("cls");
 }
- /*************************²éÑ¯Ä£¿é***********************/
-void find_num()
+ /*************************æŸ¥è¯¢æ¨¡å—***********************/
+void find()
+{	
+	int l;
+	system("cls");
+	printf(" æŒ‰å§“åæŸ¥æ‰¾è¯·æŒ‰: 1\n");
+	printf(" æŒ‰å·¥å·æŸ¥æ‰¾è¯·æŒ‰: 2\n");
+	scanf("%d",&l);
+	if(l>0&&l<3)
+	{
+		switch(l)
+		{
+			case 1:nameway();
+			break;
+			case 2:numway();
+			break;
+		}
+	}
+	else 
+	{
+		printf("\n\næ— æ•ˆæŒ‡ä»¤ï¼Œè¯·é‡è¯•");
+	}
+}
+void nameway()
 {
-     FILE *fp;
-     int i; 
-     char num[5];
-     if((fp=fopen("emp.txt","rb"))==NULL)
-     {
-          printf("²»ÄÜ´ò¿ªempÎÄ¼ş\n");
-          exit(1);
-     }
-     printf("Òª²éÑ¯µÄÖ°¹¤ºÅ:");
-     scanf("%s",num);
-     for(i=0;fread(&emp[i],sizeof(struct emploee),1,fp);i++)
-         if(!strcmp(emp[i].no,num)) break;
-    if(feof(fp))
-    {
-        printf("\t²éÎŞ´ËÈË\n");
-        exit(2);
-    }
-     printf("¼ÇÂ¼ºÅ Ö°¹¤ºÅ   ĞÕÃû  »ù±¾¹¤×Ê Ö°Îñ¹¤×Ê Ö°Îñ½òÌù  ¼¨Ğ§¹¤×Ê   Ó¦·¢¹¤×Ê  Ë°  Êµ·¢¹¤×Ê\n");
-     printf("%6d%6s%9s%4s%5d  %.1f  %.1f  %.1f  %.1f   %.1f   %.1f\n",i+1,emp[i].no,emp[i].name,emp[i].wage1,
-               emp[i].wage2,emp[i].wage3,emp[i].wage4,emp[i].wage5,emp[i].TAXfee,emp[i].wage6);
-       fclose(fp);
+	int choice;
+	int k=0;
+	char nam[50];
+	printf("\nè¯·è¾“å…¥æ‚¨è¦æŸ¥è¯¢çš„èŒå·¥å§“å:");
+	scanf("%s",nam);
+	if((fp=fopen("worker.xls","rb"))==NULL)
+	{
+		printf("\nå¯¹ä¸èµ·ï¼Œæ— æ³•æŸ¥è¯¢ä¿¡æ¯æ–‡ä»¶ã€‚");
+		exit(0);
+	}
+	while(!feof(fp))
+	{
+		fscanf(fp,"%s%s%s%s%s%s%s%s%s\n",one.name,one.num,one.sex,one.position,one.wanges,one.birth,one.gread,one.add,one.pnum);
+		if(strcmp(nam,one.name)==0)
+		{
+			printf("\n\nå·²æŸ¥åˆ°ï¼Œè®°å½•ä¸ºï¼š");
+			printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n",one.name,one.num,one.sex,one.position,one.wanges,one.birth,one.gread,one.add,one.pnum);
+			k=1;
+		}
+	}
+	if(k==0)
+	{
+		printf("\n\nå¯¹ä¸èµ·ï¼ŒæŸ¥æ— æ­¤äººã€‚\n");
+		fclose(fp);
+	}
+	printf("\n\næ“ä½œå®Œæˆï¼Œè¯·æŒ‰ä¸‹å›è½¦ç»§ç»­");
+	choice=getch();
+	system("cls");
 }
-/*******************ä¯ÀÀÄ£¿é********************/
+
+void numway()
+{
+	int i=0;
+	int choice;
+	char numb[50];
+	printf("   è¾“å…¥ä½ è¦æŸ¥è¯¢çš„å·¥å·\n");
+	scanf("%s",numb);
+	if((fp=fopen("worker.xls","rb"))==NULL)
+	{
+		printf("\nå¯¹ä¸èµ·ï¼Œæ— æ³•æŸ¥è¯¢ä¿¡æ¯æ–‡ä»¶ã€‚");
+		exit(0);
+	}
+	while(!feof(fp))
+	{
+		fscanf(fp,"%s%s%s%s%s%s%s%s%s\n",one.name,one.num,one.sex,one.position,one.wanges,one.birth,one.gread,one.add,one.pnum);
+		if(!strcmp(numb,one.num))
+		{
+			printf("\n\nå·²æŸ¥åˆ°ï¼Œè®°å½•ä¸ºï¼š");
+			printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n",one.name,one.num,one.sex,one.position,one.wanges,one.birth,one.gread,one.add,one.pnum);
+			i=1;
+		}
+	}
+	if(!i)
+	{
+		printf("\n\nå¯¹ä¸èµ·ï¼ŒæŸ¥æ— æ­¤äººã€‚");
+		fclose(fp);
+	}
+	printf("\n\næ“ä½œå®Œæˆï¼Œè¯·æŒ‰ä¸‹å›è½¦ç»§ç»­");
+	choice=getch();
+	system("cls");
+}
+/*******************æµè§ˆæ¨¡å—********************/
 void list()
 {    int i;
      FILE *fp;
      if((fp=fopen("emp.txt","r"))==NULL)
      {     
-         printf("²»ÄÜ´ò¿ªempÎÄ¼ş\n");
+         printf("ä¸èƒ½æ‰“å¼€empæ–‡ä»¶\n");
          exit(0);
      }
-     printf("¼ÇÂ¼ºÅ Ö°¹¤ºÅ     ĞÕÃû  »ù±¾¹¤×Ê Ö°Îñ¹¤×Ê Ö°Îñ½òÌù  ¼¨Ğ§¹¤×Ê   Ó¦·¢¹¤×Ê  Ë° Êµ·¢¹¤×Ê\n");
+     printf("å§“å  åŸºæœ¬å·¥èµ„ èŒåŠ¡å·¥èµ„ èŒåŠ¡æ´¥è´´  ç»©æ•ˆå·¥èµ„   åº”å‘å·¥èµ„  ç¨ å®å‘å·¥èµ„\n");
      for(i=0;fread(&emp[i],sizeof(struct emploee),1,fp)!=0;i++)
      {
           printf("%6d%6s%9s%4s%5d  %.1f  %.1f     %.1f    %.1f    %.1f   %.1f\n",i+1,emp[i].no,emp[i].name,emp[i].wage1,
@@ -229,37 +322,35 @@ void list()
     }
     fclose(fp);
 }
-/******************Ìí¼ÓÄ£¿é*******************/
-    void add()
+/******************æ·»åŠ æ¨¡å—*******************/
+void add()
 {
-      FILE *fp;
-      int n,i,j;
-      if((fp=fopen("emp.txt","ab+"))==NULL)
-      {
-          printf("²»ÄÜ´ò¿ªempÎÄ¼ş\n");
-           exit(0);
-      }
-    printf("Òª×·¼ÓµÄÖ°¹¤ÈËÊı:");
-      scanf("%d",&n);
-      for(i=0;i<n;i++) 
-      { 
-          printf("ÊäÈë¸ñÊ½:Ö°¹¤ºÅ    ĞÕÃû  »ù±¾¹¤×Ê Ö°Îñ¹¤×Ê Ö°Îñ½òÌù  ¼¨Ğ§¹¤×Ê   Ó¦·¢¹¤×Ê  Ë° <Enter>\n");
-         printf("×·¼Ó¼ÇÂ¼:\n");
-         scanf("%s%s%s%d%f%f%f%f%f",newemp.no,newemp.name,
-			 &newemp.wage1,&newemp.wage2,&newemp.wage3,&newemp.wage4,&newemp.wage5,&newemp.TAXfee);
-             newemp.wage6=newemp.wage1+newemp.wage2+newemp.wage3+newmp.wage4+newemp.wage5-newemp.TAXfee;//»ñÈ¡Ò»¸öĞÂµÄÖ°¹¤¼ÇÂ¼
-        fwrite(&newemp,sizeof(struct emploee),1,fp);   //½«¸ÃÖ°¹¤¼ÇÂ¼Ğ´ÈëÎÄ¼ş
-      }
-      fclose(fp);
+	int choice;
+	system("cls");
+	if((fp=fopen("worker.xls","a"))==NULL)
+	{
+		printf("\nå¯¹ä¸èµ·ï¼Œæ— æ³•æŸ¥è¯¢ä¿¡æ¯æ–‡ä»¶ã€‚\n\n");
+		exit(0);
+	}
+	printf("                    *********************************\n");
+	printf("                         è¯·è¾“å…¥éœ€è¦æ·»åŠ çš„èŒå·¥ä¿¡æ¯      \n");
+	printf("                    *********************************\n");
+	printf("         èŒå·¥å·   å§“å  åŸºæœ¬å·¥èµ„ èŒåŠ¡å·¥èµ„ èŒåŠ¡æ´¥è´´  ç»©æ•ˆå·¥èµ„   åº”å‘å·¥èµ„  ç¨  å®å‘å·¥èµ„\n");
+	scanf("%s%s%s%s%s%s%s%s%s",one.name,one.num,one.sex,one.position,one.wanges,one.birth,one.gread,one.add,one.pnum);
+	fprintf(fp,"%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n",one.name,one.num,one.sex,one.position,one.wanges,one.birth,one.gread,one.add,one.pnum);
+	fclose(fp);
+	printf("\n\næ“ä½œå®Œæˆï¼Œè¯·æŒ‰ä¸‹å›è½¦ç»§ç»­");
+	choice=getch();
+	system("cls");
 }
-/*************************ÔØÈëÄ£¿é**********************/
-void load()          //¼ÓÔØ¼ÇÂ¼»ò¿ÉÒÔ¼ÆËã¼ÇÂ¼¸öÊıµÄº¯Êı
+/*************************ä¿å­˜æ¨¡å—**********************/
+void write()          //åŠ è½½è®°å½•æˆ–å¯ä»¥è®¡ç®—è®°å½•ä¸ªæ•°çš„å‡½æ•°
 {
      FILE *fp;
      int i,w;
      w=1;
      system( "cls" ); 
-    if((fp=fopen("emp.txt","rb"))==NULL)      //ÒÔÊä³ö´ò¿ª·½Ê½,ÔÚ´ËÇ°µÄ¼ÇÂ¼±»¸²¸Ç
+    if((fp=fopen("emp.txt","rb"))==NULL)      //ä»¥è¾“å‡ºæ‰“å¼€æ–¹å¼,åœ¨æ­¤å‰çš„è®°å½•è¢«è¦†ç›–
     {
         printf("\nCannot open file\n");
         w=0;
